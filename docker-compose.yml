@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: resource-booking-db
+    environment:
+      POSTGRES_DB: resource_booking
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - resource_booking_data:/var/lib/postgresql/data
+
+volumes:
+  resource_booking_data:
